@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,10 @@
     <meta http-equiv="Cache-Control" content="Public">
     <meta http-equiv="Content-Type" content="text/html; charset=utf8">
     {if $node.node_id eq '1'}<link rel='stylesheet' type='text/css' href='/data/css/main.css'>
-    {else}<link rel='stylesheet' type='text/css' href='/id/1603613/download'>{/if}
+    {else}
+    <link rel='stylesheet' type='text/css' href='https://raw.githubusercontent.com/drakh/kyberia_skin/master/assets/css/kyberia.css'>
+    <script src="https://raw.githubusercontent.com/drakh/kyberia_skin/master/assets/js/lib.js"></script>
+    {/if}
     <title>{$user_id}@{$node.node_name}</title>
 </head>
 <body>
@@ -40,24 +44,31 @@
 <form enctype="multipart/form-data" action='/id/24/' method='post'><input type='hidden' name='event' value='logout'><input type='submit' value='LOGOUT' tabindex='23'></form>::
 {else}
 <div id="dmenu">
-    <div><a href='/id/1/'>MAIN</a> pokazeny layout</div>
-    <div><a href='/id/101/'>CATS</a></div>
-    <div><a href='/id/15'>K-VALUED</a></div>
-    <div><a href='/id/7607525'>K-WEIGHTED</a></div>
-    <div><a href='/id/1569351'>K.IMAGE FREE</a></div>
-    <div><a href='/id/24'>MAIL</a></div>
-    <div><a href='/id/23'>LAST</a></div>
-    <div><a href='/id/788016'>CONSCIOUSNESS</a></div>
-    <div><a href='/id/3777777'>BOOK.2</a></div>
-    <div><a href='/id/1478235'>BOOK-MARKS</a></div>
-    <div><a href='/id/27'>PEOPLE</a></div>
-    <div><a href='/id/21'>BLOGZ</a></div>
-    <div><a href='/id/{$user_id}/1961033'>/me CONF</a></div>
-    <div><a href='/id/{$user_id}/1522695'>MY SUBMISSIONZ - RE</a></div>
-    <div><a href='/id/3576777'>FRIEDZ SUBMISSIONZ</a></div>
-    <div><a href='/id/4830026'>MOST POPULATED</a></div>
-    <div><a href='/id/25'>SEARCH</a></div>
-    <div><form enctype="multipart/form-data" action='/id/24/' method='post'><input type='hidden' name='event' value='logout'><input type='submit' value='LOGOUT' tabindex='23'></form></div>
+    <ul>
+        <li><a href='/id/1/'>MAIN</a> pokazeny layout</li>
+        <li><a href='/id/101/'>CATS</a></li>
+        <li><a href='/id/15'>K-VALUED</a></li>
+        <li><a href='/id/7607525'>K-WEIGHTED</a></li>
+        <li><a href='/id/1569351'>K.IMAGE FREE</a></li>
+        <li><a href='/id/24'>MAIL</a></li>
+        <li><a href='/id/23'>LAST</a></li>
+        <li><a href='/id/788016'>CONSCIOUSNESS</a></li>
+        <li><a href='/id/3777777'>BOOK.2</a></>
+        <li><a href='/id/1478235'>BOOK-MARKS</a></li>
+        <li><a href='/id/27'>PEOPLE</a></li>
+        <li><a href='/id/21'>BLOGZ</a></li>
+        <li><a href='/id/1371/1961033'>/me CONF</a></li>
+        <li><a href='/id/1371/1522695'>MY SUBMISSIONZ - RE</a></li>
+        <li><a href='/id/3576777'>FRIEDZ SUBMISSIONZ</a></li>
+        <li><a href='/id/4830026'>MOST POPULATED</a></li>
+        <li><a href='/id/25'>SEARCH</a></li>
+        <li>
+            <form enctype="multipart/form-data" action='/id/24/' method='post'><input type='hidden'
+                                                                                      name='event'
+                                                                                      value='logout'><input
+                    type='submit' value='LOGOUT' tabindex='23'></form>
+        </li>
+    </ul>
 </div>
 <div id="bdy">
     {/if}
