@@ -1,0 +1,184 @@
+@import "buttons";
+@import "mdi";
+
+$bgcolor: #efeded;
+$important: #c00;
+$l_important: darken($important, 10%);
+
+$font_color: #252526;
+$link: #002;
+$link_h: $important;
+$size: 1rem;
+$size_multi: 1.4 * $size;
+
+.font_setup {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+.transition {
+  transition: all 150ms;
+}
+
+.font {
+  @extend .font_setup;
+  font-family: 'Zilla Slab', serif;
+  //font-family: 'Clear Sans', serif;
+  font-size: $size;
+  line-height: $size_multi;
+}
+
+.material-icons {
+  @extend .font_setup;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+.most_important {
+  color: $important
+}
+
+.important {
+  color: $l_important;
+}
+
+* {
+  @extend .font;
+  box-sizing: border-box;
+  position: relative;
+}
+
+html, body {
+  background-color: $bgcolor;
+  color: $font_color;
+  @extend .font;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+a {
+  @extend .transition;
+  color: $link;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  & * {
+    color: $link;
+  }
+  &:before {
+    @extend .transition;
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 50%;
+    left: 0;
+    bottom: 0;
+    background-color: $link;
+  }
+  &:hover {
+    color: $link_h !important;
+    & * {
+      color: $link_h !important;
+    }
+    &:before {
+      width: 100%;
+      background-color: $link_h;
+    }
+  }
+}
+
+table, tbody, tr, td {
+  @extend .font;
+  display: block;
+}
+
+button, input[type=button], input[type=submit] {
+  @extend .pure-button;
+  @extend .transition;
+  @extend .font;
+  display: inline-block;
+  background-color: darken($bgcolor, 10%);
+  border: 1px solid $font_color;
+  padding: $size/4 $size/2;
+  border-radius: 0;
+  &:hover {
+    background-color: lighten($important, 50%);
+  }
+}
+
+textarea {
+  @extend .font;
+  border: 1px solid $font_color;
+  display: block;
+  width: 100%;
+  height: 10rem;
+  padding: $size/4;
+}
+
+input[type=text], select, option {
+  @extend .font;
+  display: inline-block;
+  border: 1px solid $font_color;
+  padding: $size/4;
+}
+
+label {
+  &:before {
+    display: inline-block;
+  }
+  display: inline-block;
+  &.checkbox {
+    input[type=checkbox] {
+      display: none;
+      & ~ span {
+        cursor: pointer;
+        @extend .mdi;
+      }
+      &:not(:checked) {
+        & ~ span {
+          @extend .mdi-checkbox-blank-outline;
+        }
+      }
+      &:checked {
+        & ~ span {
+          @extend .mdi-checkbox-marked;
+        }
+      }
+    }
+  }
+  &.radio {
+    input[type=radio] {
+      display: none;
+      & ~ span {
+        @extend .mdi;
+        cursor: pointer;
+      }
+      &:not(:checked) {
+        & ~ span {
+          @extend .mdi-checkbox-blank-circle-outline;
+        }
+      }
+      &:checked {
+        & ~ span {
+          @extend .mdi-checkbox-marked-circle;
+        }
+      }
+    }
+  }
+}

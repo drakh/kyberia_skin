@@ -1,104 +1,12 @@
-@import "components/purecss/build/pure";
-@import "components/purecss/build/grids-responsive";
-@import "components/purecss/build/buttons";
-@import "components/fonts";
-
-$bgcolor: #efeded;
-$important: #c00;
-$l_important: darken($important, 10%);
-
-$font_color: #252526;
-$link: #002;
-$link_h: $important;
-$size: 1rem;
-$size_multi: 1.4 * $size;
-@mixin transition() {
-  transition: all 350ms;
-}
-
-@mixin font() {
-  font-family: 'Zilla Slab', serif;
-  font-size: $size;
-  line-height: $size_multi;
-}
-
-* {
-  box-sizing: border-box;
-  position: relative;
-  @include font();
-}
-
-html, body {
-  background-color: $bgcolor;
-  color: $font_color;
-  font-family: 'Zilla Slab', serif;
-}
-
-body {
-  display: flex;
-  flex-direction: row;
-}
-
-a {
-  color: $link;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  @include transition;
-  & * {
-    color: $link;
-  }
-  &:before {
-    content: " ";
-    position: absolute;
-    display: block;
-    height: 2px;
-    width: 50%;
-    left: 0;
-    bottom: 0;
-    background-color: $link;
-    @include transition;
-  }
-  &:hover {
-    color: $link_h !important;
-    & * {
-      color: $link_h !important;
-    }
-    &:before {
-      width: 100%;
-      background-color: $link_h;
-    }
-  }
-}
-
-.most_important {
-  color: $important
-}
-
-.important {
-  color: $l_important;
-}
-
-button, input[type=button], input[type=submit] {
-  display: inline-block;
-  background-color: darken($bgcolor, 10%);
-  border: 1px solid $font_color;
-  @include font;
-  padding: $size/4 $size/2;
-  @include transition;
-  &:hover {
-    color: $important;
-    border-color: $important;
-    background-color: lighten($bgcolor, 25%);
-    border-radius: $size/4;
-  }
-}
-
+@import "pure";
+@import "grids-responsive";
+@import "fonts";
+@import "setup";
 #dmenu {
   margin: 0;
   display: block;
   z-index: 3;
-  border: 1px solid $font_color;
+  background-color: $bgcolor;
   min-width: 12rem;
   max-width: 24rem;
   padding: $size;
@@ -106,6 +14,7 @@ button, input[type=button], input[type=submit] {
   flex-grow: 1;
   overflow: auto;
   position: relative;
+  height: 100%;
   ul {
     display: block;
     padding: 0;
@@ -132,20 +41,38 @@ button, input[type=button], input[type=submit] {
   img {
     @extend .pure-img;
   }
-}
 
-table {
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 1px solid #00f;
-  tr {
+  & > table {
+    display: block;
+    width: 100%;
     padding: 0 !important;
     margin: 0 !important;
-    border: 1px solid #0f0;
-    td {
-      padding: 0 !important;
-      margin: 0 !important;
-      border: 1px solid #f00;
+    & > tbody {
+      & > tr {
+        display: flex;
+        flex-direction: row;
+        & > td {
+          width: 15%;
+          min-width: 16rem;
+          &:last-of-type {
+            border: 1px solid #00f;
+            flex-grow: 1;
+            iframe {
+              display: block;
+              width: 100%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            img {
+              margin-left: auto;
+              margin-right: auto;
+            }
+            tr {
+              display: flex;
+            }
+          }
+        }
+      }
     }
   }
 }
