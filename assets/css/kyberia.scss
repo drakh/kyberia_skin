@@ -76,6 +76,7 @@
                 border-bottom: 1px solid $font_color;
                 margin-bottom: 1rem;
                 padding-bottom: 1rem;
+                @extend .transition;
                 tr {
                   display: flex;
                   flex-direction: row;
@@ -91,21 +92,33 @@
                         margin-bottom: 0;
                         padding-bottom: 0;
                         border-bottom: 0;
+                        @extend .transition;
                         tr {
                           display: flex;
                           flex-direction: column;
                           @extend .transition;
-                          &:hover {
-                            background-color: lighten($font_color, 75%);
-                          }
                           &.header {
                             background-color: lighten($font_color, 75%);
-                            &:hover {
-                              background-color: lighten($font_color, 60%);
-                            }
                           }
                           td {
                             padding: 0.5rem 1rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &:hover {
+                  background-color: lighten($font_color, 75%);
+                  border-bottom: 1px solid $important;
+                  tr {
+                    & > td {
+                      &:last-child {
+                        table {
+                          tr {
+                            &.header {
+                              background-color: lighten($font_color, 60%);
+                            }
                           }
                         }
                       }
