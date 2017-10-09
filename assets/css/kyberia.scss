@@ -2,6 +2,7 @@
 @import "grids-responsive";
 @import "fonts";
 @import "setup";
+
 #dmenu {
   margin: 0;
   display: block;
@@ -55,7 +56,6 @@
           width: 15%;
           min-width: 16rem;
           &:last-of-type {
-            border: 1px solid #00f;
             flex-grow: 1;
             iframe {
               display: block;
@@ -69,6 +69,50 @@
             }
             tr {
               display: flex;
+            }
+            #node_list_last {
+              display: block;
+              table {
+                border-bottom: 1px solid $font_color;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                tr {
+                  display: flex;
+                  flex-direction: row;
+                  & > td {
+                    &:first-child {
+                      width: 4rem;
+
+                    }
+                    &:last-child {
+                      width: 100%;
+                      flex-grow: 1;
+                      table {
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                        border-bottom: 0;
+                        tr {
+                          display: flex;
+                          flex-direction: column;
+                          @extend .transition;
+                          &:hover {
+                            background-color: lighten($font_color, 75%);
+                          }
+                          &.header {
+                            background-color: lighten($font_color, 75%);
+                            &:hover {
+                              background-color: lighten($font_color, 60%);
+                            }
+                          }
+                          td {
+                            padding: 0.5rem 1rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
