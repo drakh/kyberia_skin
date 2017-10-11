@@ -127,6 +127,43 @@
                 }
               }
             }
+            .node_userlist ~ table {
+              width: 100%;
+              td {
+                table {
+                  width: 100%;
+                  border-bottom: 1px solid $font_color;
+                  padding-bottom: $size;
+                  margin-bottom: $size;
+                  background-color: lighten($font_color, 75%);
+                  tr {
+                    td {
+                      padding: $size/2;
+                    }
+                    &.header {
+                      td {
+                        background-color: lighten($font_color, 70%);
+                        text-align: left;
+                        div {
+                          margin-top: $size/2;
+                          text-align: left !important;
+                        }
+                      }
+                    }
+                  }
+                  td {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+            td {
+              &.vector {
+                display: none;
+                position: relative;
+                overflow: auto;
+              }
+            }
           }
         }
       }
