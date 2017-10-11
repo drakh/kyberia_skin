@@ -178,4 +178,18 @@
       }
     }
   }
+  #topic {
+    border: 1px solid $font_color;
+    padding: $size;
+    margin-bottom: $size;
+    @extend .transition;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    &:hover {
+      border: 1px solid $important;
+      background-color: lighten($font_color, 75%);
+    }
+  }
 }
