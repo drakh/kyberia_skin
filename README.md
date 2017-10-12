@@ -4,8 +4,15 @@
 
 Pokus o to spravit kybcu o cosi viac user/mobile friendly.
 
-Biele/sede pozadie, custom font, sticky menu.
-
-Zatiial ako tak vyriesene desktopove zobrazenie, tabulky su peklo, ziadne classy su peklo. nativne kybca HTML je peklo z roku pane pred potopou.
+- blede pozadie
+- sticky menu
+- trochu poladeny desktop
+  - last
+  - obsah nody
+  - na ostatne sa treba pozriet
+- treba odladit tak nejak celkovo
+- dorobit mobile
 
 Asi by som mal dorobit aj nejaku minimalizaciu finalneho vystupu
+
+HTML struktura kybce je peklo pekiel z roku pane pred potopou.
