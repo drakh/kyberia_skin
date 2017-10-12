@@ -33,6 +33,7 @@ var domReady = (function () {
 
 function init() {
     fix_radios_checkboxes();
+    set_location();
 }
 
 function fix_radios_checkboxes() {
@@ -48,6 +49,13 @@ function fix_radios_checkboxes() {
             label.className = el.type;
             parent.replaceChild(label, el);
         }
+    }
+}
+
+function set_location() {
+    var els = document.getElementsByClassName("rest_in_piss");
+    for (var i = 0; i < els.length; i++) {
+        els[0].setAttribute("src", els[0].getAttribute('src') + '?' + Math.round(Math.random() * 1000));
     }
 }
 
