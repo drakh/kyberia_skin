@@ -10,6 +10,10 @@
     ~ #dmenu {
       display: none;
     }
+
+    ~ #bdy {
+      padding-right: 0;
+    }
   }
 }
 
@@ -25,7 +29,7 @@
   flex-grow: 1;
   overflow: auto;
   position: fixed;
-  height:100%;
+  height: 100%;
   right: 0;
   top: 0;
 
@@ -52,6 +56,7 @@
   margin: 0;
   padding: $size;
   order: 1;
+  padding-right: 12rem;
 
   img {
     @extend .pure-img;
