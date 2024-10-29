@@ -2,13 +2,17 @@
 @import "grids-responsive";
 @import "fonts";
 @import "setup";
-#toggle-menu{
-  &:checked{
-    ~ #dmenu{
+
+#toggle-menu {
+  display: none;
+
+  &:checked {
+    ~ #dmenu {
       display: none;
     }
   }
 }
+
 #dmenu {
   margin: 0;
   display: block;
@@ -20,14 +24,17 @@
   order: 2;
   flex-grow: 1;
   overflow: auto;
-  position: relative;
-  height: 100%;
+  position: fixed;
+  height:100%;
+  right: 0;
+  top: 0;
+
   ul {
     display: block;
     padding: 0;
     margin: 0;
     list-style: none;
-    position: fixed;
+
     li {
       display: block;
       padding: 0;
@@ -45,6 +52,7 @@
   margin: 0;
   padding: $size;
   order: 1;
+
   img {
     @extend .pure-img;
   }
@@ -54,58 +62,73 @@
     width: 100%;
     padding: 0 !important;
     margin: 0 !important;
+
     & > tbody {
       & > tr {
         display: flex;
         flex-direction: row;
+
         & > td {
           width: 15%;
           min-width: 16rem;
+
           &:nth-of-type(2), &:last-of-type {
             flex-grow: 1;
+
             iframe {
               display: block;
               width: 100%;
               margin-left: auto;
               margin-right: auto;
             }
+
             img {
               margin-left: auto;
               margin-right: auto;
             }
+
             tr {
               display: flex;
             }
+
             #node_list_last {
               display: block;
+
               table {
                 border-bottom: 1px solid $font_color;
                 margin-bottom: 1rem;
                 padding-bottom: 1rem;
                 @extend .transition;
+
                 tr {
                   display: flex;
                   flex-direction: row;
+
                   & > td {
                     &:first-child {
                       width: 4rem;
 
                     }
+
                     &:last-child {
                       width: 100%;
                       flex-grow: 1;
+
                       table {
                         margin-bottom: 0;
                         padding-bottom: 0;
                         border-bottom: 0;
                         @extend .transition;
+
                         tr {
                           display: flex;
                           flex-direction: column;
                           @extend .transition;
+
                           &.header {
                             background-color: lighten($font_color, 75%);
                           }
+
                           td {
                             padding: 0.5rem 1rem;
                           }
@@ -114,9 +137,11 @@
                     }
                   }
                 }
+
                 &:hover {
                   background-color: lighten($font_color, 75%);
                   border-bottom: 1px solid $important;
+
                   tr {
                     & > td {
                       &:last-child {
@@ -133,8 +158,10 @@
                 }
               }
             }
+
             .node_userlist ~ table {
               width: 100%;
+
               td {
                 table {
                   width: 100%;
@@ -142,15 +169,19 @@
                   padding-bottom: $size;
                   margin-bottom: $size;
                   @extend .transition;
+
                   tr {
                     td {
                       padding: $size/2;
                     }
+
                     &.header {
                       @extend .transition;
                       background-color: lighten($font_color, 75%);
+
                       td {
                         text-align: left;
+
                         div {
                           margin-top: $size/2;
                           text-align: left !important;
@@ -158,11 +189,14 @@
                       }
                     }
                   }
+
                   td {
                     width: 100%;
                   }
+
                   &:hover {
                     background-color: lighten($font_color, 75%);
+
                     tr {
                       &.header {
                         background-color: lighten($font_color, 60%);
@@ -172,6 +206,7 @@
                 }
               }
             }
+
             td {
               &.vector {
                 display: none;
@@ -180,22 +215,26 @@
               }
             }
           }
-          &:nth-of-type(3){
-            display:none;
+
+          &:nth-of-type(3) {
+            display: none;
           }
         }
       }
     }
   }
+
   #topic {
     border: 1px solid $font_color;
     padding: $size;
     margin-bottom: $size;
     @extend .transition;
+
     img {
       width: 100%;
       height: auto;
     }
+
     &:hover {
       border: 1px solid $important;
       background-color: lighten($font_color, 75%);
