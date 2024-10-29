@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "purecss": "^1.0.0"
+    "purecss": "1.0.0"
+  },
+  "devDependencies": {
+    "sass": "1.80.4"
   }
 }
