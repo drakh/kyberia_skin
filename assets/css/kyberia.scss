@@ -2,7 +2,13 @@
 @import "grids-responsive";
 @import "fonts";
 @import "setup";
-
+#toggle-menu{
+  &:checked{
+    ~ #dmenu{
+      display: none;
+    }
+  }
+}
 #dmenu {
   margin: 0;
   display: block;
