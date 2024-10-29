@@ -40,7 +40,7 @@ function fix_radios_checkboxes() {
     var inputs = document.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
         var el = inputs[i];
-        if (el.type === 'checkbox' || el.type === 'radio') {
+        if ((el.type === 'checkbox' || el.type === 'radio') && el.id!=='toggle-menu') {
             var parent = el.parentNode;
             var clone = el.cloneNode();
             var label = document.createElement('label');
