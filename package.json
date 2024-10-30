@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "sass --update --source-map-urls=relative --style=compressed ./assets/css/kyberia.scss ./assets/css/kyberia.css"
+  },
   "dependencies": {
     "purecss": "1.0.0"
   },

@@ -3,6 +3,17 @@
 @import "fonts";
 @import "setup";
 
+#rest-in-piss {
+  position: fixed;
+  z-index: 2;
+}
+
+#menu-toggler {
+  display: block;
+  z-index: 999;
+  width: 100%;
+}
+
 #toggle-menu {
   display: none;
 
@@ -31,7 +42,7 @@
   position: fixed;
   height: 100%;
   right: 0;
-  top: 0;
+  top: 1.5rem;
 
   ul {
     display: block;
@@ -49,9 +60,7 @@
 }
 
 #bdy {
-  flex-grow: 2;
-  z-index: 2;
-  width: 75%;
+  z-index: 3;
   display: block;
   margin: 0;
   padding: $size;
